@@ -42,7 +42,7 @@ class AvailableCars extends CBitrixComponent
         }
         $arParams['START_TIME'] = date('Y-m-d H:i:s', $arParams['START_TIME']);
         $arParams['END_TIME'] = date('Y-m-d H:i:s', $arParams['END_TIME']);
-        if($arParams['START_TIME'] < date('Y-m-d H:i:s') && $arParams['END_TIME'] < date('Y-m-d H:i:s')) {
+        if($arParams['START_TIME'] < date('Y-m-d H:i:s') || $arParams['END_TIME'] < date('Y-m-d H:i:s')) {
             ShowMessage(Loc::getMessage('TIME_NOT_TRANSMITTED'));
             die();
         }
